@@ -4,16 +4,16 @@
  *
  */
 
-/** \brief Trabajo Practico N2 
+/** \brief Trabajo Practico N2
  **
  ** Resolucion del TP2
  **
  **/
 
 /*==================[inclusions]=============================================*/
+#include "alumno.h"
 #include <stdio.h>
 #include <string.h>
-#include "alumno.h"
 /*==================[macros and definitions]=================================*/
 
 /*==================[internal data declaration]==============================*/
@@ -28,14 +28,14 @@
 
 /*==================[external functions definition]==========================*/
 
-int main (void){
+int main(void) {
 
-struct alumno_s adan;
-strcpy(adan.apellido,"Lema");
-strcpy(adan.nombre,"Adan");
-adan.dni = 41984217;
- 
-return 0;
+    struct alumno_s adan;
+    strcpy(adan.apellido, "Lema");
+    strcpy(adan.nombre, "Adan");
+    adan.dni = 41984217;
+
+    return 0;
 }
 
 /** @} doxygen end group definition */

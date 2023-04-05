@@ -1,23 +1,20 @@
 BasedOnStyle: LLVM
+UseTab: Never
 IndentWidth: 4
-BracketAlignmentStyle: Align
-Language: C
+TabWidth: 4
+BreakBeforeBraces: Attach
+
+AllowShortBlocksOnASingleLine: false
+AllowShortIfStatementsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: false
+AllowShortLambdasOnASingleLine: false
 
 AlignArrayOfStructures:  Right
 AlignConsecutiveAssignments: Consecutive
-
-# Force pointers to the type for C++.
-DerivePointerAlignment: false
-PointerAlignment: Left
----
-Language: JavaScript
-# Use 100 columns for JS.
+SortIncludes: false
+IndentCaseLabels: false
 ColumnLimit: 100
----
-Language: Proto
-# Don't format .proto files.
-DisableFormat: true
----
-Language: CSharp
-# Use 100 columns for C#.
-ColumnLimit: 100
+AccessModifierOffset: -4
+FixNamespaceComments: false
+PointerAlignment: Middle
+AlignConsecutiveMacros: AcrossEmptyLines

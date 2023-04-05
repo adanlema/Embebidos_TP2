@@ -4,7 +4,7 @@
  *
  */
 
-/** \brief Trabajo Practico N2 
+/** \brief Trabajo Practico N2
  **
  ** Resolucion del TP2
  **
@@ -17,30 +17,24 @@
 /*==================[internal data declaration]==============================*/
 
 /*==================[internal functions declaration]=========================*/
-static int SerializarCadena (void);
-static int SerializarNumero (void);
+static int SerializarCadena(void);
+static int SerializarNumero(void);
 /*==================[internal data definition]===============================*/
 
 /*==================[external data definition]===============================*/
 
 /*==================[internal functions definition]==========================*/
-static int SerializarCadena (void){
-
+static int SerializarCadena(void) {
 }
 
-static int SerializarNumero (void){
-
-
+static int SerializarNumero(void) {
 }
 
 /*==================[external functions definition]==========================*/
-int Serializar(const struct alumno_s * estrucura, char cadena[], uint8_t tamaño){
+int Serializar(const struct alumno_s * estrucura, char cadena[], uint8_t tamaño) {
 
-
-
-return 0;
+    return 0;
 }
-
 
 /** @} doxygen end group definition */
 /** @} doxygen end group definition */
