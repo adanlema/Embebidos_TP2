@@ -34,7 +34,7 @@ struct alumno_s adan;
 strcpy(adan.apellido,"Lema");
 strcpy(adan.nombre,"Adan");
 adan.dni = 41984217;
-
+ 
 return 0;
 }
 

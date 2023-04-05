@@ -29,9 +29,10 @@ typedef struct alumno_s{
 /*==================[external data declaration]==============================*/
 
 
+
 /*==================[external functions declaration]=========================*/
 
-int Serializar(const alumno_pt estrucura, char cadena[], uint8_t tamaño);
+int Serializar(const struct alumno_s * estrucura, char cadena[], uint8_t tamaño);
 
 /** @} doxygen end group definition */
 /** @} doxygen end group definition */

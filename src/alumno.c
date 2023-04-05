@@ -26,7 +26,6 @@ static int SerializarNumero (void);
 /*==================[internal functions definition]==========================*/
 static int SerializarCadena (void){
 
-
 }
 
 static int SerializarNumero (void){
@@ -35,7 +34,9 @@ static int SerializarNumero (void){
 }
 
 /*==================[external functions definition]==========================*/
-int Serializar(const alumno_pt estrucura, char cadena[], uint8_t tamaño){
+int Serializar(const struct alumno_s * estrucura, char cadena[], uint8_t tamaño){
+
+
 
 return 0;
 }
