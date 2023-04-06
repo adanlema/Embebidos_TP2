@@ -7,9 +7,9 @@
 #ifndef ALUMNO_H
 #define ALUMNO_H
 
-/** \brief Trabajo Practico N2
+/** \brief TP2
  **
- ** Resolucion del TP2
+ ** Resolucion del Trabajo Practico Nº2.
  **
  **/
 
@@ -30,7 +30,7 @@ typedef struct alumno_s {
 
 /*==================[external functions declaration]=========================*/
 
-int Serializar(const struct alumno_s * estrucura, char cadena[], uint8_t tamaño);
+int Serializar(const struct alumno_s * estructura, char cadena[], uint8_t tamaño);
 
 /** @} doxygen end group definition */
 /** @} doxygen end group definition */

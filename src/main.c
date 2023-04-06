@@ -4,16 +4,15 @@
  *
  */
 
-/** \brief Trabajo Practico N2
+/** \brief TP2
  **
- ** Resolucion del TP2
+ ** Resolucion del Trabajo Practico Nº2.
  **
  **/
 
 /*==================[inclusions]=============================================*/
 #include "alumno.h"
 #include <stdio.h>
-#include <string.h>
 /*==================[macros and definitions]=================================*/
 
 /*==================[internal data declaration]==============================*/
@@ -30,11 +29,14 @@
 
 int main(void) {
 
-    struct alumno_s adan;
-    strcpy(adan.apellido, "Lema");
-    strcpy(adan.nombre, "Adan");
-    adan.dni = 41984217;
-
+    static const struct alumno_s adan = {
+        .apellido = "Lema", .nombre = "Adan", .dni = 41984217};
+    char cadena[100];
+    if (Serializar(&adan, cadena, sizeof(cadena)) >= 0) {
+        printf("%s\n", cadena);
+    } else {
+        printf("Ocurrio un error al serializar.\n");
+    }
     return 0;
 }
 
