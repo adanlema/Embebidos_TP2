@@ -1,45 +1,46 @@
-/* Copyright 2023 - Lema, Adan
- *
- * This file is from Adan Lema, whose purpose is for learning.
- *
+/**
+ * @file alumno.c
+ * @brief Archivo: alumno.c
+ * Este archivo se encargara de serializar los datos enviados y los devolvera en
+ * la cadena de texto proporcionada.
  */
-
-/** \brief TP2
- **
- ** Resolucion del Trabajo Practico Nº2.
- **
- **/
 
 /*==================[inclusions]=============================================*/
 #include "alumno.h"
 #include <stdio.h>
+
 /*==================[macros and definitions]=================================*/
 
 /*==================[internal data declaration]==============================*/
 
 /*==================[internal functions declaration]=========================*/
-static int SerializarCadena(const char * valor, const char * campo,
-                            char * cadena, uint8_t disponible);
-static int SerializarNumero(const int valor, const char * campo, char * cadena,
+static int SerializarCadena(const char * valor, const char * campo, char * cadena,
                             uint8_t disponible);
+
+/**
+ * @brief Serializar un numero.
+ *  Esta funcion se encargara de serializar un numero entero.
+ * **/
+static int SerializarNumero(const int valor, const char * campo, char * cadena, uint8_t disponible);
 /*==================[internal data definition]===============================*/
 
 /*==================[external data definition]===============================*/
 
 /*==================[internal functions definition]==========================*/
-static int SerializarCadena(const char * valor, const char * campo,
-                            char * cadena, uint8_t disponible) {
+//! Implementacion de la funcion SerializarCadena
+static int SerializarCadena(const char * valor, const char * campo, char * cadena,
+                            uint8_t disponible) {
     return snprintf(cadena, disponible, "\"%s\":\"%s\",", campo, valor);
 }
 
+//! Implementacion de la funcion SerializarNumero
 static int SerializarNumero(const int valor, const char * campo, char * cadena,
                             uint8_t disponible) {
     return snprintf(cadena, disponible, "\"%s\":\"%d\",", campo, valor);
 }
 
 /*==================[external functions definition]==========================*/
-int Serializar(const struct alumno_s * estructura, char cadena[],
-               uint8_t tamaño) {
+int Serializar(const struct alumno_s * estructura, char cadena[], uint8_t tamaño) {
     int disponible = tamaño;
     int resultado;
 
@@ -47,19 +48,16 @@ int Serializar(const struct alumno_s * estructura, char cadena[],
     cadena++;
     disponible--;
 
-    resultado =
-        SerializarCadena(estructura->apellido, "apellido", cadena, disponible);
+    resultado = SerializarCadena(estructura->apellido, "apellido", cadena, disponible);
     if (resultado > 0) {
         disponible -= resultado;
         cadena += resultado;
-        resultado =
-            SerializarCadena(estructura->nombre, "nombre", cadena, disponible);
+        resultado = SerializarCadena(estructura->nombre, "nombre", cadena, disponible);
     }
     if (resultado > 0) {
         disponible -= resultado;
         cadena += resultado;
-        resultado =
-            SerializarNumero(estructura->dni, "documento", cadena, disponible);
+        resultado = SerializarNumero(estructura->dni, "documento", cadena, disponible);
     }
     if (resultado > 0) {
         disponible -= resultado;
@@ -70,7 +68,7 @@ int Serializar(const struct alumno_s * estructura, char cadena[],
     return resultado;
 }
 
-/** @} doxygen end group definition */
-/** @} doxygen end group definition */
-/** @} doxygen end group definition */
+/** @ doxygen end group definition */
+/** @ doxygen end group definition */
+/** @ doxygen end group definition */
 /*==================[end of file]============================================*/

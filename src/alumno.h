@@ -1,28 +1,21 @@
-/* Copyright 2023 - Lema, Adan
- *
- * This file is from Adan Lema, whose purpose is for learning.
- *
+/**
+ * @file alumno.h
+ * @brief Archivo: alumno.h
+ * Este archivo es la interfaz publica del archivo alumno.c.
  */
 
 #ifndef ALUMNO_H
 #define ALUMNO_H
 
-/** \brief TP2
- **
- ** Resolucion del Trabajo Practico Nº2.
- **
- **/
-
 /*==================[inclusions]=============================================*/
 #include <stdint.h>
-
 /*==================[macros]=================================================*/
-#define SIZE_DATA 50
+#define SIZE_DATA 50 //!< Tamaño del dato.
 /*==================[typedef]================================================*/
-
+//! Puntero a la estructura que tendra los datos del alumno
 typedef struct alumno_s {
-    char nombre[SIZE_DATA];
-    char apellido[SIZE_DATA];
+    char     nombre[SIZE_DATA];
+    char     apellido[SIZE_DATA];
     uint32_t dni;
 } * alumno_pt;
 
@@ -30,10 +23,18 @@ typedef struct alumno_s {
 
 /*==================[external functions declaration]=========================*/
 
-int Serializar(const struct alumno_s * estructura, char cadena[], uint8_t tamaño);
-
-/** @} doxygen end group definition */
-/** @} doxygen end group definition */
-/** @} doxygen end group definition */
+/** @brief Funcion Serializar
+ *  Esta funcion se encargara de serializar los datos de la estructura alumno.
+ *  Debemos pasarle un puntero a la estrucutra alumno, un cadena en la cual se
+ *  guardara el resultado y por ultimo el tamaño de la cadena. Se pasa el tama
+ *  ño de la cadena para que no se puede desbordar al serializar.
+ * **/
+int Serializar(const struct alumno_s * estructura, //!< Puntero a la estructura alumno
+               char                    cadena[],   //!< Puntero a donde guardaremos los datos
+               uint8_t                 tamaño      //!< Tamaño de la cadena
+);
+/** @ doxygen end group definition */
+/** @ doxygen end group definition */
+/** @ doxygen end group definition */
 /*==================[end of file]============================================*/
 #endif

@@ -1,14 +1,8 @@
-/* Copyright 2023 - Lema, Adan
- *
- * This file is from Adan Lema, whose purpose is for learning.
- *
+/**
+ * @file main.c
+ * @brief Archivo: alumno.h
+ * Este archivo es el programa principal de nuestro trabajo.
  */
-
-/** \brief TP2
- **
- ** Resolucion del Trabajo Practico Nº2.
- **
- **/
 
 /*==================[inclusions]=============================================*/
 #include "alumno.h"
@@ -26,12 +20,11 @@
 /*==================[internal functions definition]==========================*/
 
 /*==================[external functions definition]==========================*/
-
+//! Implementacion del codigo.
 int main(void) {
 
-    static const struct alumno_s adan = {
-        .apellido = "Lema", .nombre = "Adan", .dni = 41984217};
-    char cadena[100];
+    static const struct alumno_s adan = {.apellido = "Lema", .nombre = "Adan", .dni = 41984217};
+    char                         cadena[100];
     if (Serializar(&adan, cadena, sizeof(cadena)) >= 0) {
         printf("%s\n", cadena);
     } else {
@@ -40,7 +33,7 @@ int main(void) {
     return 0;
 }
 
-/** @} doxygen end group definition */
-/** @} doxygen end group definition */
-/** @} doxygen end group definition */
+/** @ doxygen end group definition */
+/** @ doxygen end group definition */
+/** @ doxygen end group definition */
 /*==================[end of file]============================================*/
