@@ -1,6 +1,6 @@
 /**
  * @file main.c
- * @brief Archivo: alumno.h
+ * @brief Archivo: main.c
  * Este archivo es el programa principal de nuestro trabajo.
  */
 
